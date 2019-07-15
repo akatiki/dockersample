@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  dockersample:
+    build: .
+    image: dockersample:1.0
+    environment:
+      - variable=DockerCompose
+    ports:
+      - 8080:8080
+
+  

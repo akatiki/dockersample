@@ -1,0 +1,40 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "volumes": [
+    {
+      "name": "dockersample",
+      "host": {
+        "sourcePath": "/var/app/current/dockersample"
+      }
+    }
+  ],
+    "containerDefinitions": [
+        {
+            "name": "dockersample",
+            "image": "391801227089.dkr.ecr.us-west-1.amazonaws.com/dockersample:1.0",
+            "environment": [
+		        {
+		            "name": "variable",
+		            "value": "Dockerrun.aws.json changed the value"
+		        }
+      		],
+            "memoryReservation": 256,
+      		"cpu": 1,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 8080
+                }
+            ],
+		      "mountPoints": [
+		        {
+		          "sourceVolume": "awseb-logs-dockersample",
+		          "containerPath": "/var/log/supervisor"
+		        }
+		      ]
+        }
+        
+       
+        
+    ]
+}
