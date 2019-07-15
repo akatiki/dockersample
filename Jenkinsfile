@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        dockersample = docker.build("dockersample")
+        dockersample = docker.build("akatiki/dockersample")
     }
 
     stage('Push image') {
